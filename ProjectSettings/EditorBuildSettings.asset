@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level_Hospital.unity
+    guid: be0874eb0733b41758e2dc75d952738c
+  - enabled: 1
+    path: Assets/Scenes/Level_16.unity
+    guid: 754250c2309df4ed8a463f2a7c4ee448
   m_configObjects: {}
