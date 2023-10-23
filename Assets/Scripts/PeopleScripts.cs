@@ -27,7 +27,7 @@ public class PeopleScripts : MonoBehaviour
             myRend.sprite = people1;
             mySpeed = moveSpeedFast;
         }
-        else
+        else if(size == 0)
         {
             myRend.sprite = people2;
             mySpeed = moveSpeedSlow;
@@ -37,7 +37,7 @@ public class PeopleScripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-1, 0, 0)*mySpeed;
+        transform.position += new Vector3(-1, 0, 0)*mySpeed*Time.deltaTime;
 
         if (transform.position.x <= leftBoundary)
         {

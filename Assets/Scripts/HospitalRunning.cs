@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HospitalRunning : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class HospitalRunning : MonoBehaviour
     public bool running;
     [SerializeField]
     public bool readingLetter;
+    [SerializeField]
+    public bool surgery;
 
     public GameObject people;
 
@@ -128,7 +131,7 @@ public class HospitalRunning : MonoBehaviour
             if(peopleNowTime <= 0)
             {
                 peopleNowTime = peopleLoadingTime;
-                Instantiate(people,transform.position + new Vector3(5, 0, 0), Quaternion.identity);
+                Instantiate(people,transform.position + new Vector3(10, 0, 0), Quaternion.identity);
             }
 
         }
@@ -136,6 +139,11 @@ public class HospitalRunning : MonoBehaviour
         if (readingLetter)
         {
             myChanger.GoToNext();
+        }
+
+        if (surgery)
+        {
+            SceneManager.LoadScene(3);
         }
     }
 
@@ -156,10 +164,12 @@ public class HospitalRunning : MonoBehaviour
             readingLetter = true;
         }
 
-        //if (collision.gameObject.name == "Surgery")
-        //{
-
-        //}
+        if (collision.gameObject.name == "SugeryRoom")
+        {
+            Debug.Log("collisde");
+            running = false;
+            surgery = true;
+        }
     }
 
 }
